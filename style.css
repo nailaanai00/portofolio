@@ -1,0 +1,31 @@
+/* Reset dan transisi */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Garis bawah */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #0d6efd; /* warna biru Bootstrap */
+  transition: transform 0.3s ease;
+}
+
+/* Saat hover */
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Jika aktif */
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
